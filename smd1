@@ -1,0 +1,114 @@
+
+package smd1;
+
+
+
+interface bark
+{
+	public void bark();
+}
+interface roll
+{
+	public void roll();
+}
+interface sit
+{
+	public void sit();
+}
+
+
+class barkC implements bark
+{
+        @Override
+	public void bark()
+	{
+		System.out.println("Barking");
+	}
+}
+class rollC implements roll
+{
+        @Override
+	public void roll()
+	{
+		System.out.println("Rolling");
+	}
+}
+class sitC implements sit
+{
+        @Override
+	public void sit()
+	{
+		System.out.println("Sitting");
+	}
+}
+
+ abstract class attributes
+{
+    private static int age=5;
+    private static String name="Joey";
+    abstract void size();
+    //static mehods
+    static void name()
+    {
+        System.out.printf("%n Name = ");
+        System.out.printf(name);
+    }
+    static void age()
+    {
+        System.out.printf("%nThe age of the dog is  ");
+        System.out.println( age);
+    }
+    
+    
+}
+  class Dog extends attributes implements bark,roll,sit
+  {
+  
+		public void roll()
+		{
+                    
+			rollC a  =  new rollC();
+			a.roll();
+                        
+		}
+		public void sit()
+		{
+                   
+			sitC a  =  new sitC();
+			a.sit();
+                        
+		}
+	
+		public void bark()
+		{
+                    
+			barkC a  =  new barkC();
+			a.bark();
+                        
+		}
+	
+		
+                @Override
+                public void size()
+                {
+        
+                    System.out.printf("%n The Dog size is 2 feet");
+                }
+}
+    
+public class Smd1 
+{
+    
+    
+    public static void main(String[] args) 
+    {
+        Dog x  =  new Dog();
+	Dog.name();
+        Dog.age();
+        x.bark();
+        x.roll();
+        x.sit();
+        x.size();
+    }
+    
+}
